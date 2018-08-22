@@ -1,1 +1,3 @@
-/* pages/login/index.wxss */
+.container {
+  padding: 24px 0;
+}

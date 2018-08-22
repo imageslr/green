@@ -19,19 +19,19 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/icon_home.png",
+        "iconPath": "/images/icon_home.png",
         "selectedIconPath": "images/icon_home.png"
       },
       {
         "pagePath": "pages/donate/index",
         "text": "我要捐款",
-        "iconPath": "images/icon_heart.png",
+        "iconPath": "/images/icon_heart.png",
         "selectedIconPath": "images/icon_heart.png"
       },
       {
         "pagePath": "pages/me/index",
         "text": "我的",
-        "iconPath": "images/icon_me.png",
+        "iconPath": "/images/icon_me.png",
         "selectedIconPath": "images/icon_me.png"
       }
     ]

@@ -1,66 +1,85 @@
-// pages/login/index.js
+import { sendCode, bindAccount } from "../../apis/user";
+import { login } from "../../utils/permission";
+import { isPhone, isVrcode } from "../../utils/validator";
+
+var toptip; // 保存toptip组件的引用
+var toast; // 保存toast组件的引用
+var sendBtn; // 保存send-code组件的引用
+
+var comeFrom; // 从哪个页面来：me、donate
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    name: "",
+    phone: "",
+    vrcode: ""
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad: function(options) {
+    comeFrom = options.from;
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  onReady: function() {
+    toptip = this.selectComponent("#toptip");
+    toast = this.selectComponent("#toast");
+    sendBtn = this.selectComponent("#send-btn");
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  onInput: function(e) {
+    var params = {};
+    params[e.currentTarget.dataset.label] = e.detail.value;
+    this.setData(params);
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  onSend: function() {
+    if (!isPhone(this.data.phone)) {
+      return toptip.show("手机号格式不正确");
+    }
+    sendBtn.prepare();
+    sendCode(this.data.phone)
+      .then(() => {
+        toast.show("验证码将以短信的形式发送至您的手机");
+        sendBtn.start();
+      })
+      .catch(() => sendBtn.stop());
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
+  onSubmit: function() {
+    let { name, phone, vrcode } = this.data;
+    if (!name) {
+      toptip.show("请输入您的姓名");
+      return;
+    }
+    if (!isPhone(phone)) {
+      toptip.show("手机号格式不正确");
+      return;
+    }
+    if (!isVrcode(vrcode)) {
+      toptip.show("请输入6位数字验证码");
+      return;
+    }
+    wx.showLoading();
+    // TODO 获取code
+    bindAccount({ phone, vrcode, name })
+      .then(({ data }) => {
+        login(data.token_info.token);
+        getApp().setUserInfo(data.member);
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
+        wx.wx.showToast({
+          title: "绑定成功",
+          icon: "success"
+        });
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+        if (comeFrom === "me") {
+          wx.navigateBack();
+        } else if (comeFrom === "donate") {
+          wx.navigateTo({
+            url: "/pages/donate/donate?type=realname"
+          });
+        }
+      })
+      .catch(() => {
+        wx.hideLoading();
+      });
   }
-})
+});

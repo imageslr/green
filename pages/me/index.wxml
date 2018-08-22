@@ -1,2 +1,21 @@
-<!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+<image src="/images/bg.jpg" mode="widthFix" class="background-image" />
+<view class="container">
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="nickname">
+    <open-data type="userNickName"></open-data>
+  </view>
+  <view wx:if="{{!isLogin}}" class="weui-btn-area">
+    <navigator class="weui-btn" url="../login/index?from=me">
+      <button type="primary">点击绑定账号，获取二维码</button>
+    </navigator>
+  </view>
+  <block wx:else>
+    <view class="user-info">
+      <view>姓名：{{ userInfo.name }}</view>
+      <view>手机号：{{ userInfo.phone }}</view>
+    </view>
+    <canvas hidden="{{canvasHidden}}" style="width: 300px; height: 300px; margin: 0 auto;" canvas-id="qrcode" />
+  </block>
+</view>
