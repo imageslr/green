@@ -1,2 +1,8 @@
-<!--pages/index.wxml-->
-<text>pages/index.wxml</text>
+<image src="/images/bg.jpg" mode="widthFix" class="background-image" />
+<view class="container">
+  <view class="h1">绿手帕基金管理有限公司简介</view>
+  <view class="p">
+    绿手帕基金管理有限公司是在国家推行“生态文明”建设的步伐中应运而生，主要致力于公益事业投资与发展。“绿手帕”是践行生态文明的一个典范！是国家绿色发展的一面旗帜！是人类绿色生活的一个符号！是绿色品牌传播的首选公益载体！是公众利益和精神文明的一个象征！绿手帕将发挥公募基金与私募基金【顶层设计】的双重优势，结合地方绿色发展进行产业投资与布局。
+  </view>
+  <view class="p">重拾手帕，少用纸巾，保护环境，让绿色少受伤害。照亮绿色发展之路，绿手帕必将成为人类精神文明的象征！绿手帕益天下！</view>
+</view>

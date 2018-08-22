@@ -2,32 +2,31 @@
   "pages": ["pages/index/index", "pages/donate/donate", "pages/me/me"],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#09BB07",
+    "navigationBarBackgroundColor": "#009402",
     "navigationBarTitleText": "绿手帕小程序",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
+    "backgroundColor": "#009402",
+    "color": "#fff",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/icon_home_line.png",
-        "selectedIconPath": "images/icon_home_fill.png",
-        "selectedColor": "#09BB07"
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home.png"
       },
       {
         "pagePath": "pages/donate/donate",
         "text": "我要捐款",
-        "iconPath": "images/icon_heart_line.png",
-        "selectedIconPath": "images/icon_heart_fill.png",
-        "selectedColor": "#09BB07"
+        "iconPath": "images/icon_heart.png",
+        "selectedIconPath": "images/icon_heart.png"
       },
       {
         "pagePath": "pages/me/me",
         "text": "我的",
-        "iconPath": "images/icon_me_line.png",
-        "selectedIconPath": "images/icon_me_fill.png",
-        "selectedColor": "#09BB07"
+        "iconPath": "images/icon_me.png",
+        "selectedIconPath": "images/icon_me.png"
       }
     ]
   }
