@@ -713,7 +713,8 @@ var QR = (function () {
         ctx = wx.createCanvasContext(canvas),
         px = Math.round(size / (width + 8))
       var roundedSize = px * (width + 8),
-        offset = Math.floor((size - roundedSize) / 2)
+        // offset = Math.floor((size - roundedSize) / 2)
+        offset = 0
       size = roundedSize
       ctx.clearRect(0, 0, cavW, cavW)
       ctx.setFillStyle('#000000')

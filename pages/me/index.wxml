@@ -16,6 +16,9 @@
       <view>姓名：{{ userInfo.name }}</view>
       <view>手机号：{{ userInfo.phone }}</view>
     </view>
-    <canvas hidden="{{canvasHidden}}" style="width: 300px; height: 300px; margin: 0 auto;" canvas-id="qrcode" />
+    <canvas hidden="{{canvasHidden}}" style="width: 600rpx; height: 600rpx; margin: 0 auto;" canvas-id="qrcode" />
+    <view class="weui-btn-area" style="margin-top: 0">
+      <button type="default" class="weui-btn" bindtap="onLogout">退出登录</button>
+    </view>
   </block>
 </view>
