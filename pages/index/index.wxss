@@ -1,9 +1,4 @@
 /* pages/index.wxss */
-
-page {
-  background-color: #f7fcf4;
-}
-
 .container {
   padding: 24px 16px;
 }

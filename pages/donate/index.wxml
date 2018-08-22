@@ -1,0 +1,10 @@
+<image src="/images/bg.jpg" mode="widthFix" class="background-image" />
+<image src="/images/donate-bg.jpg" mode="widthFix" class="bg" />
+<view class="weui-btn-area">
+  <navigator class="weui-btn" url="./donate?type=anonymous">
+    <button type="primary">匿名捐款</button>
+  </navigator>
+  <navigator class="weui-btn" url="/pages/login/index">
+    <button type="primary">实名捐款</button>
+  </navigator>
+</view>

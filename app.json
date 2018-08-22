@@ -1,5 +1,11 @@
 {
-  "pages": ["pages/index/index", "pages/donate/donate", "pages/me/me"],
+  "pages": [
+    "pages/index/index",
+    "pages/donate/index",
+    "pages/me/index",
+    "pages/donate/donate",
+    "pages/login/index"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#009402",
@@ -17,13 +23,13 @@
         "selectedIconPath": "images/icon_home.png"
       },
       {
-        "pagePath": "pages/donate/donate",
+        "pagePath": "pages/donate/index",
         "text": "我要捐款",
         "iconPath": "images/icon_heart.png",
         "selectedIconPath": "images/icon_heart.png"
       },
       {
-        "pagePath": "pages/me/me",
+        "pagePath": "pages/me/index",
         "text": "我的",
         "iconPath": "images/icon_me.png",
         "selectedIconPath": "images/icon_me.png"

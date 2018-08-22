@@ -1,4 +1,4 @@
-// pages/donate/anonymous.js
+// pages/donate/donate.js
 Page({
 
   /**

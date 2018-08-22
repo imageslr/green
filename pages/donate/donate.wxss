@@ -1,1 +1,40 @@
-/* pages/donate/donate.wxss */
+.container {
+  padding: 24px 32px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  width: 100px;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #009402;
+  font-size: 16px;
+  line-height: 1.7em;
+}
+.item__money {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+}
+.item__description {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.other {
+  margin-top: 24px;
+}
+.other__title {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #999;
+}
+.other__input {
+  height: 2em;
+  min-height: 2em;
+  line-height: 2em;
+  font-size: 16px;
+  border: 1px solid #888;
+}

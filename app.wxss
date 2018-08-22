@@ -1,5 +1,25 @@
-/**app.wxss**/
+@import "styles/weui.wxss";
+
+page {
+  background-color: #f7fcf4;
+}
+
 .background-image {
   width: 100%;
   border-bottom: 1px dashed #888;
+  vertical-align: bottom;
+}
+
+.active {
+  background-color: #ececec !important;
+}
+
+/** 覆盖weui **/
+
+button {
+  border-radius: 0;
+}
+
+button[type="primary"] {
+  background-color: #009402;
 }
