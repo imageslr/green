@@ -2,6 +2,8 @@ import { isLogin, login } from "../../utils/permission";
 import { getUserInfo } from "../../apis/user";
 import QR from "../../utils/qrcode";
 
+var app = getApp();
+
 Page({
   data: {
     isLogin: isLogin(),
@@ -14,20 +16,21 @@ Page({
 
   onShow: function(options) {
     this.setData({ isLogin: isLogin() });
-    if (isLogin()) {
-      if (!getApp().globalData.userInfo) {
+    if (!this.data.userInfo.id && isLogin()) {
+      if (!app.globalData.userInfo) {
         wx.showLoading();
         getUserInfo()
           .then(({ data }) => {
+            wx.hideLoading();
+            app.setUserInfo(data);
             this.setData({ userInfo: data });
             this.drawQRCode();
-            wx.hideLoading();
           })
           .catch(() => {
             wx.hideLoading();
           });
       } else {
-        this.setData({ userInfo: getApp().globalData.userInfo });
+        this.setData({ userInfo: app.globalData.userInfo });
         this.drawQRCode();
       }
     }

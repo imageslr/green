@@ -62,18 +62,17 @@ Page({
     // TODO 获取code
     bindAccount({ phone, vrcode, name })
       .then(({ data }) => {
-        login(data.token_info.token);
-        getApp().setUserInfo(data.member);
-
-        wx.wx.showToast({
+        wx.showToast({
           title: "绑定成功",
           icon: "success"
         });
+        login(data.token_info.token, data.member);
 
+        // 跳转页面
         if (comeFrom === "me") {
           wx.navigateBack();
         } else if (comeFrom === "donate") {
-          wx.navigateTo({
+          wx.redirectTo({
             url: "/pages/donate/donate?type=realname"
           });
         }

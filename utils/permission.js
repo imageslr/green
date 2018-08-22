@@ -24,10 +24,11 @@ function autoLogin() {
   TOKEN = wx.getStorageSync(TOKEN_KEY);
 }
 
-function login(token) {
+function login(token, userInfo) {
   try {
     wx.setStorageSync(TOKEN_KEY, token);
     setToken(token);
+    getApp().setUserInfo(userInfo);
     return true;
   } catch (e) {
     console.error("设置storage失败: " + e);
@@ -39,6 +40,7 @@ function logout() {
   try {
     wx.clearStorageSync();
     setToken(null);
+    getApp().setUserInfo(null);
     return true;
   } catch (e) {
     console.error("清空storage失败: " + e);

@@ -4,7 +4,5 @@
   <navigator class="weui-btn" url="./donate?type=anonymous">
     <button type="primary">匿名捐款</button>
   </navigator>
-  <navigator class="weui-btn" url="/pages/login/index">
-    <button type="primary">实名捐款</button>
-  </navigator>
+  <button class="weui-btn" bindtap="onNavigate" type="primary">实名捐款</button>
 </view>
