@@ -73,7 +73,7 @@ export function request(method, relativeUrl, param, header) {
       header: Object.assign(
         {
           "Content-Type": "application/json",
-          TOKEN: getToken()
+          Authorization: `Bearer ${getToken()}`
         },
         header
       ),

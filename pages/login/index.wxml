@@ -29,7 +29,8 @@
       </view>
     </view>
   </view>
+  <view class="weui-cells__tips">未注册的手机号会自动注册并与此微信账号绑定</view>
   <view class="weui-btn-area">
-    <button class="weui-btn" type="primary" catchtap="onSubmit">下一步</button>
+    <button class="weui-btn" type="primary" catchtap="onSubmit">绑定该账号</button>
   </view>
 </view>
